@@ -1,16 +1,13 @@
-import { Inter } from "next/font/google";
-import HeroSection from "./components/HeroSection";
-import Carousel from "./components/carousel";
-import Feature from "./components/feature";
-
-const inter = Inter({ subsets: ["latin"] });
+import LandingPage from "./components/LandingPage";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <main>
-      <HeroSection></HeroSection>
-      <Feature></Feature>
-      <Carousel></Carousel>
-    </main>
+    <>
+      <main>
+        <LandingPage></LandingPage>
+      </main>
+    </>
   );
 }

@@ -1,12 +1,7 @@
 "use client";
-import { ChakraProvider } from "@chakra-ui/react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-import Footer from "./components/footer";
-import Navbar from "./components/navbar";
-
-const inter = Inter({ subsets: ["latin"] });
+import { ChakraProvider } from "@chakra-ui/react";
+import { customTheme } from "./designSystem";
 
 export const metadata: Metadata = {
   title: "My frontend Test",
@@ -21,11 +16,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <ChakraProvider>
-          <Navbar></Navbar>
-          {children}
-          <Footer></Footer>
-        </ChakraProvider>
+        <ChakraProvider theme={customTheme}>{children}</ChakraProvider>
       </body>
     </html>
   );
