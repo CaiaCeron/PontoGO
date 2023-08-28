@@ -30,11 +30,11 @@ export default function HeroSection() {
                 zIndex: -1,
               }}
             >
-              Freelance
+              ESQUECE O PONTO MANUAL
             </Text>
             <br />{" "}
             <Text color={"blue.400"} as={"span"}>
-              Design Projects
+              Chegou a nova realidade para Controle de Pontos
             </Text>{" "}
           </Heading>
           <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
@@ -50,9 +50,9 @@ export default function HeroSection() {
                 bg: "blue.500",
               }}
             >
-              Create Project
+              Assinar agora
             </Button>
-            <Button rounded={"full"}>How It Works</Button>
+            <Button rounded={"full"}>Ver planos</Button>
           </Stack>
         </Stack>
       </Flex>

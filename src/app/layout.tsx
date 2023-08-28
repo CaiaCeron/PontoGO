@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import Footer from "./components/footer";
-import HeroSection from "./components/hero-section";
 import Navbar from "./components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,9 +23,8 @@ export default function RootLayout({
       <body>
         <ChakraProvider>
           <Navbar></Navbar>
-          <HeroSection></HeroSection>
-          <Footer></Footer>
           {children}
+          <Footer></Footer>
         </ChakraProvider>
       </body>
     </html>
