@@ -25,6 +25,7 @@ export const customTheme = extendTheme({
     regular: 400,
     medium: 500,
     bold: 700,
+    extrabold: 800,
   },
 
   lineHeights: {

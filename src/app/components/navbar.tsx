@@ -1,35 +1,28 @@
 "use client";
-
-import {
-  Box,
-  Flex,
-  Avatar,
-  HStack,
-  Text,
-  IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
-} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
-
-interface Props {
-  children: React.ReactNode;
-}
+import React from "react";
+import NextLink from "next/link";
+import { Box, Flex, HStack, Image, Button, Link } from "@chakra-ui/react";
 
 export default function Navbar() {
   return (
     <>
-      <Box bg={useColorModeValue("pink", "gray.900")} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+      <Box>
+        <Flex
+          h={20}
+          px={20}
+          paddingTop={"80px"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Logo</Box>
+            <Link as={NextLink} href={"/"}>
+              <Image
+                boxSize={"164px"}
+                src="/Ponto_go_logo.png"
+                objectFit={"scale-down"}
+              />
+            </Link>
+
             <HStack
               as={"nav"}
               spacing={4}
@@ -38,13 +31,43 @@ export default function Navbar() {
           </HStack>
           <Flex alignItems={"center"}>
             <Button
-              variant={"solid"}
-              colorScheme={"teal"}
-              size={"sm"}
-              mr={4}
-              leftIcon={<AddIcon />}
+              as={NextLink}
+              href={"/login"}
+              h={"50px"}
+              w={"100px"}
+              rounded={"5px"}
+              variant={"link"}
+              color={"color.white"}
+              size={"lg"}
+              fontWeight={"regular"}
             >
-              Action
+              Início
+            </Button>
+            <Button
+              as={NextLink}
+              href={"/login"}
+              h={"50px"}
+              w={"160px"}
+              rounded={"5px"}
+              variant={"link"}
+              color={"color.white"}
+              size={"lg"}
+              fontWeight={"regular"}
+            >
+              Planos
+            </Button>
+            <Button
+              as={NextLink}
+              href={"/login"}
+              h={"50px"}
+              w={"160px"}
+              rounded={"5px"}
+              variant={"solid"}
+              color={"color.primary"}
+              size={"lg"}
+              fontWeight={"regular"}
+            >
+              Fazer Login
             </Button>
           </Flex>
         </Flex>

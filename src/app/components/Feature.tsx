@@ -3,47 +3,69 @@
 import {
   Box,
   Container,
-  Flex,
   Heading,
-  Stack,
-  Text,
   Grid,
   Image,
+  Text,
+  Stack,
 } from "@chakra-ui/react";
-import { ReactElement } from "react";
-import {
-  FcAbout,
-  FcAssistant,
-  FcCollaboration,
-  FcDonate,
-  FcManager,
-} from "react-icons/fc";
+import { CheckIcon } from "@chakra-ui/icons";
 
 export default function Feature() {
   return (
-    <Box p={4}>
-      <Container maxW={"5xl"} mt={12}>
-        <Flex flexWrap="wrap" gridGap={16} justify="center">
-          <Stack spacing={4} as={Container} maxW={"1xl"} textAlign={"center"}>
-            <Grid
-              templateColumns="repeat(3, 1fr)"
-              gap={6}
-              justifyContent={"center"}
-            >
-              <Image boxSize="100px"></Image>
-              <Image boxSize="100px"></Image>
-              <Image boxSize="100px"></Image>
-            </Grid>
-            <Heading fontSize={{ base: "2xl", sm: "4xl" }} fontWeight={"bold"}>
-              Encontre o plano perfeito
-            </Heading>
-            <Text color={"gray.600"} fontSize={{ base: "sm", sm: "lg" }}>
-              Escolha o plano que melhor se encaixa na sua empresa e faça sua
-              assinatura, dentro de 72h iremos liberar seus acessos.
-            </Text>
-          </Stack>
-        </Flex>
-      </Container>
-    </Box>
+    <>
+      <Box p={4}>
+        <Box>
+          <Grid
+            px={20}
+            marginLeft={"100px"}
+            marginRight={"100px"}
+            templateColumns="repeat(4, 1fr)"
+          >
+            <Box>
+              <Image
+                margin={"auto"}
+                src={"/Brainny.png"}
+                boxSize={"230px"}
+                objectFit={"scale-down"}
+              ></Image>
+            </Box>
+            <Box>
+              <Image
+                margin={"auto"}
+                src={"/Amo_pet.png"}
+                boxSize={"230px"}
+                objectFit={"scale-down"}
+              ></Image>
+            </Box>
+            <Box>
+              <Image
+                margin={"auto"}
+                src={"/Dot_bus.png"}
+                boxSize={"230px"}
+                objectFit={"scale-down"}
+              ></Image>
+            </Box>
+            <Box>
+              <Image
+                margin={"auto"}
+                src={"/GoStudy.png"}
+                boxSize={"230px"}
+                objectFit={"scale-down"}
+              ></Image>
+            </Box>
+          </Grid>
+        </Box>
+        <Stack spacing={6} as={Container} maxW={"3xl"} textAlign={"center"}>
+          <Heading fontSize={"5xl"} fontWeight={"extrabold"}>
+            Encontre o plano perfeito
+          </Heading>
+          <Text color={"color.white"} fontSize={"2xl"} opacity={"0.7"}>
+            Escolha o plano que melhor se encaixa na sua empresa e faça
+            <br /> sua assinatura, dentro de 72h iremos liberar seus acessos.
+          </Text>
+        </Stack>
+      </Box>
+    </>
   );
 }
