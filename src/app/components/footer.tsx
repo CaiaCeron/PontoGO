@@ -1,11 +1,5 @@
 "use client";
-import {
-  Box,
-  Text,
-  Divider,
-  AbsoluteCenter,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Box, Text, SimpleGrid } from "@chakra-ui/react";
 
 export default function Footer() {
   return (

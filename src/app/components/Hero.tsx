@@ -53,7 +53,8 @@ export default function Hero() {
                 size={"lg"}
                 fontWeight={"regular"}
                 _hover={{
-                  bg: "purple.500",
+                  transform: "translateY(-2px)",
+                  boxShadow: "lg",
                 }}
               >
                 Assinar agora
@@ -66,6 +67,10 @@ export default function Hero() {
                 color={"white"}
                 size={"lg"}
                 fontWeight={"regular"}
+                _hover={{
+                  transform: "translateY(-2px)",
+                  boxShadow: "lg",
+                }}
               >
                 Ver planos
               </Button>

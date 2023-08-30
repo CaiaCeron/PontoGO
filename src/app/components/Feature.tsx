@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Box,
   Container,
@@ -9,7 +8,6 @@ import {
   Text,
   Stack,
 } from "@chakra-ui/react";
-import { CheckIcon } from "@chakra-ui/icons";
 
 export default function Feature() {
   return (

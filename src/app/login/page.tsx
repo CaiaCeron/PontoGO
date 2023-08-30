@@ -1,10 +1,9 @@
-import Link from "next/link";
+import Login from "../components/Login";
 
-export default function Login() {
+export default function LoginScreen() {
   return (
     <>
-      <h1>Login page</h1>
-      <Link href="/"> Go back to the Landing page</Link>
+      <Login></Login>
     </>
   );
 }

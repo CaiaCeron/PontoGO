@@ -44,8 +44,8 @@ export default function Card() {
             <Text fontWeight={400}>Uso de 10 colaboradores</Text>
           </Stack>
 
-          <Box px={10} py={10}>
-            <List px={2} spacing={3} color={"color.white"}>
+          <Box px={8} py={10}>
+            <List px={1} spacing={3} color={"color.white"}>
               <ListItem>
                 <ListIcon as={CheckIcon} />
                 &nbsp; Área de meus registros
@@ -77,7 +77,8 @@ export default function Card() {
               color={"white"}
               rounded={"5px"}
               _hover={{
-                bg: "color.primary",
+                transform: "translateY(-2px)",
+                boxShadow: "lg",
               }}
             >
               Assinar agora

@@ -66,6 +66,10 @@ export default function Navbar() {
               color={"color.primary"}
               size={"lg"}
               fontWeight={"regular"}
+              _hover={{
+                transform: "translateY(-2px)",
+                boxShadow: "lg",
+              }}
             >
               Fazer Login
             </Button>
