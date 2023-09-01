@@ -1,14 +1,36 @@
-import { Inter } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"] });
+"use client";
+import { Container, Box } from "@chakra-ui/react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Feature from "./components/Feature";
+import Card from "./components/Card";
+import Followus from "./components/Followus";
+import Footer from "./components/Footer";
+import VSpacer from "./components/VSpacer";
 
 export default function Home() {
   return (
-    <main>
-      <h1>HELLO INTERNET</h1>
-      <Link href="/login"> Go to Login Page</Link>
-    </main>
+    <>
+      <main>
+        <div>
+          <Container backgroundColor={"#120039"} maxW={"full"} p={0}>
+            <Box
+              color={"white"}
+              position={"relative"}
+              backgroundImage={"/Galaxy_background.png"}
+              backgroundSize={"cover"}
+            >
+              <Navbar></Navbar>
+              <Hero></Hero>
+              <Feature></Feature>
+              <Card></Card>
+              <VSpacer></VSpacer>
+              <Followus></Followus>
+              <Footer></Footer>
+            </Box>
+          </Container>
+        </div>
+      </main>
+    </>
   );
 }
