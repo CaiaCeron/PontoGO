@@ -1,10 +1,19 @@
+"use client";
 import Link from "next/link";
+import SidebarRegister from "../components/SidebarRegister";
+import { Button } from "@chakra-ui/react";
 
-export default function Login() {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Meus Registros",
+  description: "Registro de pontos",
+};
+
+export default function MyRegisters() {
   return (
     <>
-      <h1>Reg page</h1>
-      <Link href="/"> Go back to the Landing page</Link>
+      <SidebarRegister></SidebarRegister>
     </>
   );
 }

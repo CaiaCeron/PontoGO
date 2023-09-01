@@ -1,5 +1,6 @@
 "use client";
-
+import { setCookie, parseCookies } from "nookies";
+import { gql, useMutation } from "@apollo/client";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import {
@@ -17,9 +18,40 @@ import {
   Box,
   Image,
 } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
+
+const LOGIN = gql`
+  mutation login($identifier: String!, $password: String!) {
+    login(input: { identifier: $identifier, password: $password }) {
+      jwt
+    }
+  }
+`;
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const [userName, setUsername] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+
+  const [login, { data, loading, error }] = useMutation(LOGIN);
+  const router = useRouter();
+  async function HandleLogin() {
+    try {
+      const response = await login({
+        variables: { identifier: userName, password: userPassword },
+      });
+
+      if (response?.data?.login?.jwt) {
+        const token = response.data.login.jwt;
+        setCookie(null, "authToken", token, { maxAge: 3600, path: "/" });
+        router.push("/dashboard");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log("COOKIES: ", parseCookies(null)?.["authToken"]);
+    }
+  }
 
   return (
     <Stack
@@ -60,6 +92,8 @@ export default function Login() {
               Email
             </FormLabel>
             <Input
+              value={userName}
+              onChange={(e) => setUsername(e.target.value)}
               bg={"color.white"}
               border={"1px"}
               borderColor={"#20292E4D"}
@@ -74,6 +108,8 @@ export default function Login() {
             </FormLabel>
             <InputGroup>
               <Input
+                value={userPassword}
+                onChange={(e) => setUserPassword(e.target.value)}
                 bg={"color.white"}
                 border={"1px"}
                 borderColor={"#20292E4D"}
@@ -114,6 +150,7 @@ export default function Login() {
                 transform: "translateY(-2px)",
                 boxShadow: "lg",
               }}
+              onClick={HandleLogin}
             >
               Entrar
             </Button>

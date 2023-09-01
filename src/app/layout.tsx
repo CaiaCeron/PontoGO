@@ -3,6 +3,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { customTheme } from "./designSystem";
 import { Poppins } from "next/font/google";
 import type { Metadata } from "next";
+import { ApolloProvider } from "@apollo/client";
+import client from "../apollo/index";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={poppins.className}>
-        <ChakraProvider theme={customTheme}>{children}</ChakraProvider>
+        <ApolloProvider client={client}>
+          <ChakraProvider theme={customTheme}>{children}</ChakraProvider>
+        </ApolloProvider>
       </body>
     </html>
   );

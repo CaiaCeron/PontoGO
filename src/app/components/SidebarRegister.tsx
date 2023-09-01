@@ -10,6 +10,7 @@ import {
   Text,
   Drawer,
   Image,
+  Button,
   DrawerContent,
   useDisclosure,
   BoxProps,
@@ -24,7 +25,7 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { PiNotepadLight } from "react-icons/pi";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { AiOutlineCaretDown } from "react-icons/ai";
-import RowTable from "../components/RowTable";
+import RowTable from "./RowTable";
 
 interface LinkItemProps {
   name: string;
@@ -36,7 +37,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: "Meus registros", icon: PiNotepadLight, pageLink: "/meus-registros" },
 ];
 
-export default function Sidebar() {
+export default function SidebarRegister() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -63,6 +64,20 @@ export default function Sidebar() {
         <MobileNav display={{ base: "flex", md: "none" }} onOpen={onOpen} />
         <Box ml={{ base: 0, md: 60 }} p="4">
           {/* Content */}
+          <Button
+            w={"200px"}
+            h={"50px"}
+            mb={"8"}
+            bg={"color.primary"}
+            color={"white"}
+            rounded={"5px"}
+            _hover={{
+              transform: "translateY(-2px)",
+              boxShadow: "lg",
+            }}
+          >
+            Registrar ponto
+          </Button>
           <HStack spacing="10%" w={"full"}>
             <Box>
               <HStack w={"full"}>
